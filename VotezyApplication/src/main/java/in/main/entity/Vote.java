@@ -1,5 +1,8 @@
 package in.main.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,6 +23,15 @@ public class Vote {
 	private Voter voter;
 	@ManyToOne
 	@JoinColumn(name = "candidate_id")
+	@JsonIgnore
 	private Candidate candidate;
+	@JsonProperty
+	public Long getVoter() {
+		return voter !=null ? voter.getId():null;
+	}
+	@JsonProperty
+	public Long getCandidateId() {
+		return candidate!=null?candidate.getId():null;
+	}
 
 }
