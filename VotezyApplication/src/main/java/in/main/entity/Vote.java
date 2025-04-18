@@ -26,7 +26,7 @@ public class Vote {
 	@JsonIgnore
 	private Candidate candidate;
 	@JsonProperty
-	public Long getVoter() {
+	public Long getVoterId() {
 		return voter !=null ? voter.getId():null;
 	}
 	@JsonProperty

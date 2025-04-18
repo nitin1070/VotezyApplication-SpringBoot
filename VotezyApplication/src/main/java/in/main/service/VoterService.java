@@ -69,4 +69,7 @@ public class VoterService {
 		}		
 		voterRepository.delete(voter);
 	}
+	
+	
+	
 }
