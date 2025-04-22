@@ -26,6 +26,7 @@ public class Candidate {
 	private String party;
 	private int voteCount=0;
 	@OneToMany(mappedBy = "candidate",cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<Vote> votes;
 	@OneToMany(mappedBy="candidate",cascade=CascadeType.ALL)
 	@JsonIgnore
